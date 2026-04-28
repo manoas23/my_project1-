@@ -172,4 +172,34 @@ public:
         total += dist(cx,cy,1,1);
         return total;
     }
+     int h2(State s,Game &g)
+    {
+        int best=0;
+
+        if(s.c1=='f')
+        {
+            int t=dist(s.x,s.y,g.coinX[0],g.coinY[0]);
+            if(t>best) best=t;
+        }
+
+        if(s.c2=='f')
+        {
+            int t=dist(s.x,s.y,g.coinX[1],g.coinY[1]);
+            if(t>best) best=t;
+        }
+
+        if(s.c3=='f')
+        {
+            int t=dist(s.x,s.y,g.coinX[2],g.coinY[2]);
+            if(t>best) best=t;
+        }
+
+        if(s.c4=='f')
+        {
+            int t=dist(s.x,s.y,g.coinX[3],g.coinY[3]);
+            if(t>best) best=t;
+        }
+
+        return best;
+    }
 };
