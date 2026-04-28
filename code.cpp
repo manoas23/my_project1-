@@ -123,4 +123,53 @@ public:
         g.print(arr[i]);
         cout<<endl;
     }
+    int h1(State s,Game &g)
+    {
+        int total=0;
+        int cx=s.x, cy=s.y;
+
+        char a=s.c1,b=s.c2,c=s.c3,d=s.c4;
+
+        while(true)
+        {
+            int best=9999;
+            int choose=0;
+
+            if(a=='f')
+            {
+                int t=dist(cx,cy,g.coinX[0],g.coinY[0]);
+                if(t<best){best=t; choose=1;}
+            }
+
+            if(b=='f')
+            {
+                int t=dist(cx,cy,g.coinX[1],g.coinY[1]);
+                if(t<best){best=t; choose=2;}
+            }
+
+            if(c=='f')
+            {
+                int t=dist(cx,cy,g.coinX[2],g.coinY[2]);
+                if(t<best){best=t; choose=3;}
+            }
+
+            if(d=='f')
+            {
+                int t=dist(cx,cy,g.coinX[3],g.coinY[3]);
+                if(t<best){best=t; choose=4;}
+            }
+
+            if(choose==0) break;
+
+            total += best;
+
+            if(choose==1){cx=g.coinX[0]; cy=g.coinY[0]; a='t';}
+            if(choose==2){cx=g.coinX[1]; cy=g.coinY[1]; b='t';}
+            if(choose==3){cx=g.coinX[2]; cy=g.coinY[2]; c='t';}
+            if(choose==4){cx=g.coinX[3]; cy=g.coinY[3]; d='t';}
+        }
+
+        total += dist(cx,cy,1,1);
+        return total;
+    }
 };
