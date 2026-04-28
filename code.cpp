@@ -4,7 +4,7 @@ using namespace std;
 const int SIZE = 10;
 const int MAX = 10000;
 
-// ================= STATE =================
+// Class State
 class State
 {
 public:
@@ -13,7 +13,7 @@ public:
     int parent;
 };
 
-// ================= GAME =================
+// Class Game
 class Game
 {
 public:
@@ -82,7 +82,7 @@ public:
     }
 };
 
-// ================= SEARCH =================
+// Class Search
 class Search
 {
 public:
@@ -115,7 +115,7 @@ public:
         return false;
     }
 
-    void printPath(State arr[],int i,Game &g)
+    void printPath(State arr[],int i,Game &g) 
     {
         if(i==-1) return;
 
