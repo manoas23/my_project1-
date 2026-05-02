@@ -287,7 +287,6 @@ public:
         }
     }
 };
-
 // ---------- MAIN ----------
 int main() {
     Game g;
